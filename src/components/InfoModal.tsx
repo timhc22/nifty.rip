@@ -50,6 +50,9 @@ export default function InfoModal ({ open, setOpen, maxImages, openSettings, sou
         <Typography variant="h3" className="greyFont">Info</Typography>
         <br/>
 
+        {/* todo instructions for moving*/}
+        {/* todo link to https://mynifty.gallery*/}
+
         <Typography className="greyFont">
           This project is designed to show an important concept about NFTs.. 'ownership' can be lost, the 'jpg' not.. Think about posting the key AND the deeds through the letterbox of a house..
         </Typography>
