@@ -17,12 +17,12 @@ import {OrbitControls} from "@react-three/drei";
 export default function HomePage(): JSX.Element {
   const [musicUrl, setMusicUrl] = React.useState("https://cdn.pixabay.com/download/audio/2021/08/09/audio_046edb7268.mp3?filename=dunes-7115.mp3");
   // const [musicUrl, setMusicUrl] = React.useState("https://www.free-stock-music.com/music/alexander-nakarada-space-ambience.mp3");
-  const [source, setSource] = React.useState("knownorigin");
+  const [source, setSource] = React.useState("opensea");
   const [address, setAddress] = React.useState("0x000000000000000000000000000000000000dead");
   const [open, setOpen] = React.useState(false);
   const [vrMode, setVrMode] = React.useState(false);
   const [displayMode, setDisplayMode] = React.useState(0);
-  const [maxImages, setMaxImages] = React.useState(7);
+  const [maxImages, setMaxImages] = React.useState(15);
   const [infoOpen, setInfoOpen] = React.useState(false);
   const [settingsOpen, setSettingsOpen] = React.useState(false);
   const [zoomEnabled, setZoomEnabled] = React.useState(false);
