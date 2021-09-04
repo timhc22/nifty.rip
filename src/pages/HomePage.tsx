@@ -128,7 +128,7 @@ export default function HomePage(): JSX.Element {
 
       <div className="text3-container">
         <Typography variant="subtitle2" className="text3" >
-          <a className="pointer" onClick={() => {
+          <a className="pointer minitext" onClick={() => {
             setSettingsOpen(true)
           }}>{address}</a>
         </Typography>
