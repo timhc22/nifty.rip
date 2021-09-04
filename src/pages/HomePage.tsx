@@ -128,13 +128,16 @@ export default function HomePage(): JSX.Element {
 
       <div className="text3-container">
         <Typography variant="subtitle2" className="text3" >
-          <InfoOutlined className="pointer" style={{ color: "white" }} onClick={toggleInfoModal}/>
-          <SettingsOutlined className="pointer" style={{ color: "white", marginLeft: "2px" }} onClick={toggleSettingsModal}/>
+          <a className="pointer" onClick={() => {
+            setSettingsOpen(true)
+          }}>{address}</a>
         </Typography>
       </div>
 
       <div className="text4-container">
-        <Typography variant="subtitle2" className="text3" >
+        <Typography variant="subtitle2" className="text4" >
+          <SettingsOutlined className="pointer" style={{ color: "white", marginLeft: "2px" }} onClick={toggleSettingsModal}/>
+          <InfoOutlined className="pointer" style={{ color: "white", margin: "0 4px" }} onClick={toggleInfoModal}/>
           <AudioPlayer url={musicUrl} />
         </Typography>
       </div>
