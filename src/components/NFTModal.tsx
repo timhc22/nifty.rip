@@ -1,5 +1,6 @@
 import {createStyles, makeStyles, Modal, Theme} from "@material-ui/core";
 import React from "react";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 export default function NFTModal ({ open, selectedImage, setOpen, setSelectedImage }: any) {
 
@@ -44,6 +45,8 @@ export default function NFTModal ({ open, selectedImage, setOpen, setSelectedIma
       aria-describedby="simple-modal-description"
     >
       <div style={modalStyle} className={classes2.paper}>
+        <HighlightOffIcon className="closeModalButton" onClick={() => { setOpen(false)}}/>
+
         <h2 className="greyFont" id="simple-modal-title">{selectedImage.name}</h2>
 
         { selectedImage.dateLost && (
