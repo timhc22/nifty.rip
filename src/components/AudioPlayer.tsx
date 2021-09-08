@@ -8,20 +8,21 @@ import {MusicNoteOutlined, MusicOffOutlined} from "@material-ui/icons";
  */
 const AudioPlayer = ({ url }: any) => {
 
-  // todo may need to add an 'await' from get storage with the url of the audio
-
-  console.log(url)
   // todo add a way to stop the error continually being called if not online
 
-  const [audio] = useState(new Audio(url));
+  const [audio, setAudio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
   const toggle = () => setPlaying(!playing);
 
   useEffect(() => {
-      playing ? audio.play() : audio.pause();
-    },
-    [playing]
-  );
+    playing ? audio.play() : audio.pause();
+  }, [playing]);
+
+  useEffect(() => {
+    audio.pause();
+    setPlaying(false);
+    setAudio(new Audio(url));
+  }, [url]);
 
   useEffect(() => {
     // todo add loop
