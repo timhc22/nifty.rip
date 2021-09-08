@@ -133,8 +133,9 @@ export default function SettingsModal ({ open, setOpen, zoomEnabled, setZoomEnab
           value={address}
           onChange={(ev) => {updateAddress(ev.target.value)}}
         >
-          <MenuItem value={"0x0000000000000000000000000000000000000000"}>0x0000000000000000000000000000000000000000</MenuItem>
-          <MenuItem value={"0x000000000000000000000000000000000000dead"}>0x000000000000000000000000000000000000dead</MenuItem>
+          <MenuItem value={"0x0000000000000000000000000000000000000000"}>0x0000...0000000000000</MenuItem>
+          <MenuItem value={"0x000000000000000000000000000000000000dead"}>0x0000...000000000dead</MenuItem>
+          <MenuItem value={"0x0000000000000000000000000001346a3dad0d5b"}>0x0000...1346a3dad0d5b</MenuItem>
           {/*<MenuItem value={"0x8309d9a1B39CC5f309B5e44db315532Afb60f43e"}>0x8309d9a1B39CC5f309B5e44db315532Afb60f43e</MenuItem>*/}
         </Select>
         <br/>
