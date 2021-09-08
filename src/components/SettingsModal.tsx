@@ -106,6 +106,73 @@ export default function SettingsModal ({ open, setOpen, zoomEnabled, setZoomEnab
         <br/>
         <hr/>
         <br/>
+        <Typography variant="h5" className="secondaryColor">Basic</Typography>
+        <br/>
+
+        <InputLabel id="demo-simple-select-label2">Source:</InputLabel>
+        <Select
+          labelId="demo-simple-select-label2"
+          id="demo-simple-select2"
+          value={source}
+          onChange={(ev) => {updateSource(ev.target.value)}}
+        >
+          <MenuItem value={'knownorigin'}>KnownOrigin</MenuItem>
+          <MenuItem value={'opensea'}>OpenSea</MenuItem>
+        </Select>
+
+        <br/>
+        <br/>
+
+        <InputLabel id="demo-simple-select-label">Display Mode:</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={displayMode}
+          onChange={(ev) => {updateDisplayMode(ev.target.value)}}
+        >
+          <MenuItem value={0}>Cluster</MenuItem>
+          <MenuItem value={1}>Spiral</MenuItem>
+          <MenuItem value={2}>Spiral Galaxy</MenuItem>
+          <MenuItem value={3}>Swirl</MenuItem>
+        </Select>
+
+        <br/><br/>
+
+        <InputLabel id="demo-simple-select-label3">Address:</InputLabel>
+        <Select
+          className="addressInput"
+          labelId="demo-simple-select-label3"
+          id="demo-simple-select3"
+          value={address}
+          onChange={(ev) => {updateAddress(ev.target.value)}}
+        >
+          <MenuItem value={"0x0000000000000000000000000000000000000000"}>0x0000...0000000000000</MenuItem>
+          <MenuItem value={"0x000000000000000000000000000000000000dead"}>0x0000...000000000dead</MenuItem>
+          <MenuItem value={"0x000000000000000000000000000000000edd899b"}>0x0000...000000edd899b</MenuItem>
+        </Select>
+        <br/>
+        <br/>
+
+        {/*max images setting*/}
+        <TextField
+          type="number"
+          value={maxImages}
+          onChange={(e) => updateMaxImages(e.target.value)}
+          label="Max Images"
+          InputProps={{
+            inputProps: {
+              min: 1 , max: 100
+            }
+          }}
+        />
+
+        <br/><br/>
+        <hr/>
+        <br/>
+
+        <Typography variant="h5" className="secondaryColor">Advanced</Typography>
+
+
         <Typography className="greyFont">Zoom Enabled:</Typography>
         {/*<Button variant="contained" color="primary" onClick={toggleZoomEnabled}>Toggle Zoom</Button>*/}
         <Switch checked={zoomEnabled} onChange={toggleZoomEnabled} color="primary" />
@@ -125,64 +192,7 @@ export default function SettingsModal ({ open, setOpen, zoomEnabled, setZoomEnab
         />
         <br/>
         <br/>
-        <InputLabel id="demo-simple-select-label3">Address:</InputLabel>
-        <Select
-          className="addressInput"
-          labelId="demo-simple-select-label3"
-          id="demo-simple-select3"
-          value={address}
-          onChange={(ev) => {updateAddress(ev.target.value)}}
-        >
-          <MenuItem value={"0x0000000000000000000000000000000000000000"}>0x0000...0000000000000</MenuItem>
-          <MenuItem value={"0x000000000000000000000000000000000000dead"}>0x0000...000000000dead</MenuItem>
-          <MenuItem value={"0x000000000000000000000000000000000edd899b"}>0x0000...000000edd899b</MenuItem>
-        </Select>
-        <br/>
-        <br/>
 
-        <InputLabel id="demo-simple-select-label">Display Mode:</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={displayMode}
-          onChange={(ev) => {updateDisplayMode(ev.target.value)}}
-        >
-          <MenuItem value={0}>Cluster</MenuItem>
-          <MenuItem value={1}>Spiral</MenuItem>
-          <MenuItem value={2}>Spiral Galaxy</MenuItem>
-          <MenuItem value={3}>Swirl</MenuItem>
-        </Select>
-
-        <br/><br/>
-
-        <InputLabel id="demo-simple-select-label2">Source:</InputLabel>
-        <Select
-          labelId="demo-simple-select-label2"
-          id="demo-simple-select2"
-          value={source}
-          onChange={(ev) => {updateSource(ev.target.value)}}
-        >
-          <MenuItem value={'knownorigin'}>KnownOrigin</MenuItem>
-          <MenuItem value={'opensea'}>OpenSea</MenuItem>
-        </Select>
-
-        <br/>
-        <br/>
-        {/*max images setting*/}
-        <TextField
-          type="number"
-          value={maxImages}
-          onChange={(e) => updateMaxImages(e.target.value)}
-          label="Max Images"
-          InputProps={{
-            inputProps: {
-              min: 1 , max: 100
-            }
-          }}
-        />
-        <br/><br/>
-
-        <Button variant="contained" color="primary" onClick={()=>{window.location.reload();}}>Refresh Page</Button>
       </div>
     </Modal>
   )
