@@ -77,7 +77,7 @@ export default function HomePage(): JSX.Element {
 
     // this might be being called before the local storage retreival above
     getAssets();
-  }, []);
+  }, [source, address, maxImages]);
 
 
   async function getAssets () {
