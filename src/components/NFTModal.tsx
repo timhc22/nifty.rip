@@ -11,7 +11,8 @@ export default function NFTModal ({ open, selectedImage, setOpen, setSelectedIma
       transform: `translate(-50%, -50%)`,
       maxWidth: '90vw',
       maxHeight: '70vh',
-      overflow: 'scroll'
+      overflow: 'scroll',
+      display: 'flex',
     };
   }
 
@@ -24,6 +25,7 @@ export default function NFTModal ({ open, selectedImage, setOpen, setSelectedIma
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
+        flexDirection: 'column'
       },
     }),
   );

@@ -74,9 +74,11 @@ $secondary-color: #683d00;
   z-index: 99;
 
   img {
+    //padding: 10vw;
     width: 100%;
-    height: auto;
-    max-height: 50vh;
+    height: 100%;
+    padding: 5px;
+    //max-height: 50vh;
   }
 }
 
@@ -148,9 +150,10 @@ $secondary-color: #683d00;
 
 // todo check that probably don't need important
 #simple-modal-description {
+  flex: 1 0;
   display: block !important;
-  overflow-y: scroll !important;
-  max-height: 20vh !important;
+  //overflow-y: scroll !important;
+  //max-height: 20vh !important;
 }
 
 .pointer {
