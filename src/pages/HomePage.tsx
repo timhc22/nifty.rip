@@ -81,12 +81,13 @@ export default function HomePage(): JSX.Element {
 
 
   async function getAssets () {
-    let newAssets = await fetchAssets([], maxImages, source, address);
+    let newAssets = await fetchAssets([], maxImages, source, address, 0);
     setLoading(false);
     console.log('assets:', newAssets)
     if (newAssets.length === 0) {
-      console.log('There has probably been an error (not very helpful I know sorry, but there ain\'t no Nifties!');
-      setErrorMessage('Looks like an error :(');
+      // todo fix this so that errors show but not when disconnecting
+      // console.log('There has probably been an error (not very helpful I know sorry, but there ain\'t no Nifties!');
+      // setErrorMessage('Looks like an error :(');
     }
     setGallery(newAssets);
   }

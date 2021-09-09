@@ -12,16 +12,12 @@ export default function Image3D(props: any): JSX.Element {
   let pos1 = 0, pos2 = 0, pos3 = 0;
   const displayMode = Number.parseInt(props.displayMode); // may not be needed
 
-  // todo this works without use effect, and I'm not sure why (ie switching from cluser to spiral)
-  // useEffect(() => {
-    pos1 = props.image.displayMode[displayMode].pos1;
-    pos2 = props.image.displayMode[displayMode].pos2;
-    pos3 = props.image.displayMode[displayMode].pos3;
-  // }, [props.displayMode])
+  pos1 = props.image.displayMode[displayMode].pos1;
+  pos2 = props.image.displayMode[displayMode].pos2;
+  pos3 = props.image.displayMode[displayMode].pos3;
 
   return (
     <mesh
-      className="nft"
       {...props}
       ref={mesh}
       onClick={(event) => handleOpen(props.image) }
